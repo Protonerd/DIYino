@@ -318,6 +318,7 @@ void loop() {
             
   for (int i = 0; i < sizeof(ledPins); i++) {
     analogWrite(ledPins[i], constrain(LEDbrightness,0,50));
+    delay(20);
   }  
  if (LEDbrightness==50) {
 
