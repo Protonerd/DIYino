@@ -37,7 +37,8 @@
 #include "Wire.h"
 #include <EEPROMex.h> // include EEPROM library to write the calibrated offset values into the EEPROM
 
-#define MEMORYBASEMPUCALIBOFFSET 96 // start storing the calibration values starting at this address
+//#define MEMORYBASEMPUCALIBOFFSET 96 // start storing the calibration values starting at this address
+#define MEMORYBASEMPUCALIBOFFSET 200 // start storing the calibration values starting at this address
 #define DEBUGVERBOSE
 ///////////////////////////////////   CONFIGURATION   /////////////////////////////
 //Change this 3 variables if you want to fine tune the skecth to your needs.
@@ -360,7 +361,7 @@ bool calibration(){
   Serial.println(gz_offset+gz_initoffset);
   loopcount=loopcount+1;
   Serial.print("Loop Cnt: ");Serial.println(loopcount);
-  if (loopcount==10) {
+  if (loopcount==20) {
      return false;   
      break; // exit the calibration routine if no stable results can be obtained after 20 calibration loops
     }
